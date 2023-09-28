@@ -1,4 +1,4 @@
-const getStoreJobApplication = () =>{
+const getStoredJobApplication = () =>{
     const storedJobApplication = localStorage.getItem('job-application');
     if(storedJobApplication){
         return JSON.parse(storedJobApplication);
@@ -8,7 +8,7 @@ const getStoreJobApplication = () =>{
 
 const saveJobApplication = id =>{
 
-    const storedJobApplication = getStoreJobApplication();
+    const storedJobApplication = getStoredJobApplication();
     const exists = storedJobApplication.find(jobId => jobId === id);
     if(!exists){
         storedJobApplication.push(id);
